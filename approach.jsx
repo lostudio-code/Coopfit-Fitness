@@ -191,7 +191,7 @@ function Services() {
     "Strength · Mobility · Conditioning",
     "Tribeca, midtown, or your private space"],
 
-    img: "https://coopfitfitness.com/wp-content/uploads/2025/08/davidharbor.jpg"
+    img: "assets/davidharbor.jpg"
   },
   {
     tag: "02 / Anywhere",
@@ -203,7 +203,7 @@ function Services() {
     "Bodyweight or equipment-equipped",
     "Travel-week protocols included"],
 
-    img: "https://coopfitfitness.com/wp-content/uploads/2025/08/jksimmons3.jpg"
+    img: "assets/jksimmons3.jpg"
   },
   {
     tag: "03 / Program",
@@ -215,7 +215,7 @@ function Services() {
     "Daily WhatsApp + bi-weekly Zoom",
     "Form review & progress tracking"],
 
-    img: "https://coopfitfitness.com/wp-content/uploads/2025/08/Blake.jpg",
+    img: "assets/Blake.jpg",
     imgPos: "center 18%"
   }];
 

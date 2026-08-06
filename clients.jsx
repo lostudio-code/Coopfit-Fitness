@@ -6,31 +6,31 @@ function Testimonials() {
     quote: "Charles is the best. I've worked with him for specific film roles which required me to be that guy \"…in great shape for his age\" and the results were excellent (and viewable onscreen). His combination of broad-based yet specific knowledge, good humor, adaptability and motivation is everything I need.",
     name: "J. K. Simmons",
     role: "Academy Award-winning actor",
-    img: "https://coopfitfitness.com/wp-content/uploads/2021/09/JK.png"
+    img: "assets/JK.png"
   },
   {
     quote: "I had not set foot in a gym for over ten years. Charles immediately put me at ease. I never felt pushed beyond a healthy limit, yet I knew I was getting a good workout. He has a vast knowledge of the body's functionality and knows how to tailor an exercise to the individual.",
     name: "Scott Carlton",
     role: "Owner, Scott Carlton Voice Studio",
-    img: "https://coopfitfitness.com/wp-content/uploads/2016/07/Scott_C.png"
+    img: "assets/Scott_C.png"
   },
   {
     quote: "I started working out for the first time in my fifties. He pushed me just the right amount, harder than I ever would have, but not beyond my limits. He will not be distracted by his cell phone, only focusing on you and your training. A full 5-star guy.",
     name: "Stan Arkow, MD",
     role: "Associate Professor, Columbia University Irving Medical Center",
-    img: "https://coopfitfitness.com/wp-content/uploads/2020/12/Stan.png"
+    img: "assets/Stan.png"
   },
   {
     quote: "He assessed my fitness level, strengths, and weaknesses and came up with a program that works for me. He explains and communicates clearly throughout. He's patient, friendly, personable, and hilarious, making working out more fun and less of a chore.",
     name: "Linh N V Tran",
     role: "Senior Account Manager, WebMD",
-    img: "https://coopfitfitness.com/wp-content/uploads/2020/12/Linh.png"
+    img: "assets/Linh.png"
   },
   {
     quote: "Charles is a thoughtful and encouraging trainer. I had worked with a few other trainers previously, but Charles was the best at understanding my fitness goals and how to obtain them. I enjoy his enthusiasm and sense of humor, and I always look forward to seeing him.",
     name: "Robert Luzzi",
     role: "Former WW Executive Creative Director, Estée Lauder",
-    img: "https://coopfitfitness.com/wp-content/uploads/2016/07/Robert_L.png"
+    img: "assets/Robert_L.png"
   }];
 
 

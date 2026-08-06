@@ -52,10 +52,10 @@ function Hero({ layout, headlineKey }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const HERO_VIDEO = "https://coopfitfitness.com/wp-content/uploads/2020/12/Coop_Edit_2bit.mp4";
-  const HERO_POSTER = "https://coopfitfitness.com/wp-content/uploads/2020/12/Coopfit_Hero_Crop-scaled.jpg";
-  const HERO_PHOTO = "https://coopfitfitness.com/wp-content/uploads/2020/11/hero.jpg";
-  const SPLIT_PHOTO = "https://coopfitfitness.com/wp-content/uploads/2025/08/jksimmons3.jpg";
+  const HERO_VIDEO = "assets/Coop_Edit_2bit.mp4";
+  const HERO_POSTER = "assets/hero.jpg";
+  const HERO_PHOTO = "assets/hero.jpg";
+  const SPLIT_PHOTO = "assets/jksimmons3.jpg";
 
   // --- Media element by layout ---
   let mediaEl = null;

@@ -55,7 +55,7 @@ function About() {
           }}>
             <img
               ref={imgRef}
-              src="https://coopfitfitness.com/wp-content/uploads/2020/11/hero.jpg"
+              src="assets/Coopfit_Hero_Crop-scaled.jpg"
               alt="Charles Cooperman"
               style={{
                 width: "100%",
