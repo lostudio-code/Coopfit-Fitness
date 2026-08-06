@@ -5,7 +5,7 @@ function Marquee() {
   "Tribeca, NYC",
   "Est. 2002",
   "Private Coaching",
-  "22+ Years Experience",
+  "25 Years Experience",
   "200+ Clients",
   "5 Certifications",
   "Now Accepting · 2026"];
@@ -400,7 +400,7 @@ function ServiceCard({ tag, title, kicker, body, bullets, img, imgPos }) {
 // === Stats with animated counters ===
 function Stats() {
   const items = [
-  { v: 22, suffix: "+", label: "Years coaching", sub: "Manhattan & worldwide" },
+  { v: 25, suffix: "+", label: "Years coaching", sub: "Manhattan & worldwide" },
   { v: 200, suffix: "+", label: "Clients & counting", sub: "Executives, founders, talent" },
   { v: 5, suffix: "", label: "Certifications", sub: "CFSC · NFPT · FRC · RMP · Pre/Post" },
   { v: 100, suffix: "%", label: "Phone-free sessions", sub: "Eyes on you, every minute" }];
