@@ -53,9 +53,9 @@ function Hero({ layout, headlineKey }) {
   }, []);
 
   const HERO_VIDEO = "assets/Coop_Edit_2bit.mp4";
-  const HERO_POSTER = "assets/hero.jpg";
-  const HERO_PHOTO = "assets/hero.jpg";
-  const SPLIT_PHOTO = "assets/jksimmons3.jpg";
+  const HERO_POSTER = "assets/hero-opt.jpg";
+  const HERO_PHOTO = "assets/hero-opt.jpg";
+  const SPLIT_PHOTO = "assets/jksimmons3-opt.jpg";
 
   // --- Media element by layout ---
   let mediaEl = null;
@@ -67,7 +67,9 @@ function Hero({ layout, headlineKey }) {
       muted
       loop
       playsInline
+      preload="auto"
       poster={HERO_POSTER}
+      onEnded={(e) => { e.currentTarget.currentTime = 0; e.currentTarget.play().catch(() => {}); }}
       style={{
         position: "absolute",
         inset: 0,

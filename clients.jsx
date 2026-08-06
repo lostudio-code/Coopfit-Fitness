@@ -107,7 +107,7 @@ function Testimonials() {
                 letterSpacing: "-0.005em"
               }}>{t.quote}</p>
               <footer style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 18 }}>
-                <img src={t.img} alt={t.name} style={{
+                <img src={t.img} alt={t.name} loading="lazy" decoding="async" width="56" height="56" style={{
                   width: 56,
                   height: 56,
                   borderRadius: "50%",

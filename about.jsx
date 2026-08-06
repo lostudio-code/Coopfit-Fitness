@@ -55,7 +55,9 @@ function About() {
           }}>
             <img
               ref={imgRef}
-              src="assets/Coopfit_Hero_Crop-scaled.jpg"
+              loading="lazy"
+              decoding="async"
+              src="assets/about-opt.jpg"
               alt="Charles Cooperman"
               style={{
                 width: "100%",

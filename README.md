@@ -1,42 +1,39 @@
 # Coopfit Fitness — Website
 
-Single-page marketing site for [coopfitfitness.com](https://coopfitfitness.com) — a luxury private training brand based in Tribeca, NYC. Built as a rebrand targeting high-profile finance and wealth clientele in New York City.
+Marketing site for Coopfit Fitness, a private personal-training studio in Tribeca, NYC. Built as a single-page site with React (via in-browser Babel) and plain CSS.
 
-## About
+## Structure
 
-**Charles Cooperman** is a private fitness coach with 22+ years of experience training Manhattan executives, founders, and on-screen talent (J.K. Simmons, David Harbour). This site replaces the existing WordPress site with a modern, Equinox-adjacent aesthetic.
+| File | Purpose |
+| --- | --- |
+| `index.html` | Entry point — loads React, Babel, and all component scripts |
+| `styles.css` | Global styles, design tokens, buttons, responsive rules |
+| `nav.jsx` | Top navigation + mobile menu |
+| `hero.jsx` | Hero section (video / split / photo layouts) |
+| `approach.jsx` | Method, services, and stats sections + marquee |
+| `clients.jsx` | Client testimonials |
+| `about.jsx` | About the coach |
+| `contact.jsx` | Contact section + Calendly link + footer |
+| `app.jsx` | Root component; composes sections and hosts design tweaks |
+| `tweaks-panel.jsx` | Design-time tweak panel (dormant unless activated by a host) |
+| `404.html` | Fallback page |
+| `assets/` | Images and video |
 
-## Design
+## Running locally
 
-- **Palette:** Black (`#0a0908`) + champagne gold (`#c8a96a`)
-- **Typography:** Archivo Narrow (display), Archivo (body), JetBrains Mono (labels/mono)
-- **Style:** Luxury fitness — dark, editorial, minimal
-
-## Sections
-
-| Section | Description |
-|---|---|
-| Hero | Full-bleed video background with parallax, animated headline, Calendly CTA |
-| Marquee | Scrolling credential strip |
-| Method | 4-pillar grid — Strategy, Movement, Nutrition, Accountability |
-| Services | In-Person 1:1 · Virtual Training · 90-Day Transformation |
-| Stats | Animated counters — 22+ years, 200+ clients, 5 certifications, 100% phone-free |
-| Clients | Celebrity photo grid (JK Simmons, David Harbour) + testimonials carousel |
-| About | Portrait, bio, pull quote, LinkedIn/Instagram links, 5 certifications |
-| Contact | Inline inquiry form + Calendly booking card |
-| Footer | Brand, sitemap, social links, studio info |
-
-## Tech
-
-Plain HTML + CSS + vanilla JS — no build step, no dependencies. Open `index.html` directly in a browser or serve with any static file server.
+No build step. Serve the folder over HTTP (required — `file://` blocks module/asset loading):
 
 ```bash
-python3 -m http.server 8080
-# → http://localhost:8080
+python3 -m http.server 8000
+# then open http://localhost:8000
 ```
 
-## Key Links
+## Deploying
 
-- **Calendly:** https://calendly.com/coopfit78/new-meeting
-- **Instagram:** https://www.instagram.com/coopfit_fitness/
-- **LinkedIn:** https://www.linkedin.com/in/charlescooperman
+Static site — deploy the folder as-is to GitHub Pages, Netlify, Vercel, or any static host.
+
+## Notes
+
+- React and Babel are loaded from a CDN; components are transpiled in the browser. This keeps the project buildless but means Babel runs on first load. For a production build you may want to precompile the JSX.
+- The tweaks panel only renders when a design host activates it and has no effect on the public site.
+- No API keys, secrets, or backend credentials are used. The contact form is front-end only; wire it to a backend or form service before collecting real submissions.

@@ -271,17 +271,14 @@ function Wordmark({ accent }) {
     <div style={{
       fontFamily: "var(--ff-display)",
       fontWeight: 800,
-      fontSize: 22,
-      letterSpacing: "-0.02em",
+      fontSize: 24,
+      letterSpacing: "0.02em",
       textTransform: "uppercase",
       color: "var(--ink)",
-      display: "flex",
-      alignItems: "center",
-      gap: 2,
+      lineHeight: 1,
+      display: "inline-block"
     }}>
-      <span>COOP</span>
-      <span style={{ color: "var(--accent)" }}>/</span>
-      <span style={{ fontWeight: 300 }}>FIT</span>
+      COOPFIT
     </div>
   );
 }

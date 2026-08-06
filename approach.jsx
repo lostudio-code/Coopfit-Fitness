@@ -190,7 +190,7 @@ function Services() {
     "Strength · Mobility · Conditioning",
     "Tribeca, midtown, or your private space"],
 
-    img: "assets/davidharbor.jpg"
+    img: "assets/davidharbor-opt.jpg"
   },
   {
     tag: "02 / Anywhere",
@@ -202,7 +202,7 @@ function Services() {
     "Bodyweight or equipment-equipped",
     "Travel-week protocols included"],
 
-    img: "assets/jksimmons3.jpg"
+    img: "assets/jksimmons3-opt.jpg"
   },
   {
     tag: "03 / Program",
@@ -214,7 +214,7 @@ function Services() {
     "Daily WhatsApp + bi-weekly Zoom",
     "Form review & progress tracking"],
 
-    img: "assets/Blake.jpg",
+    img: "assets/Blake-opt.jpg",
     imgPos: "center 18%"
   }];
 
@@ -303,7 +303,7 @@ function ServiceCard({ tag, title, kicker, body, bullets, img, imgPos }) {
         position: "relative",
         overflow: "hidden"
       }}>
-        <img src={img} alt={title} style={{
+        <img src={img} alt={title} loading="lazy" decoding="async" style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",

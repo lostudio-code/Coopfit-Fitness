@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Coopfit Fitness</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .nf-wrap{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:var(--bg-1)}
+    .nf-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.4) contrast(1.05) saturate(0.85)}
+    .nf-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,16,14,0.72),rgba(17,16,14,0.6) 45%,rgba(17,16,14,0.9))}
+    .nf-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:26px 48px}
+    .nf-logo{font-family:var(--ff-display);font-weight:800;font-size:24px;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink)}
+    .nf-main{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:30px;padding:40px 48px 80px;max-width:1440px;margin:0 auto;width:100%}
+    .nf-code{font-family:var(--ff-display);font-weight:800;text-transform:uppercase;line-height:0.82;letter-spacing:-0.03em;margin:0;font-size:clamp(120px,26vw,360px);color:var(--ink)}
+    .nf-code .rep{color:var(--accent);position:relative;display:inline-block}
+    .nf-sub{font-family:var(--ff-mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px}
+    .nf-sub::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+    .nf-lead{margin:0;max-width:520px;font-size:19px;line-height:1.5;color:var(--ink)}
+    .nf-lead .mute{color:var(--ink-mute)}
+    .nf-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+    .nf-meta{position:relative;z-index:2;padding:22px 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-family:var(--ff-mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-mute)}
+    @media(max-width:720px){
+      .nf-top{padding:20px}.nf-main{padding:20px 20px 60px;gap:22px}.nf-meta{padding:18px 20px;flex-direction:column;gap:8px}
+      .nf-cta .btn{width:100%;justify-content:center}
+    }
+    @media(prefers-reduced-motion:no-preference){
+      .nf-code .rep{animation:nfpulse 2.6s var(--ease-in-out) infinite}
+    }
+    @keyframes nfpulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    a.nf-home:hover{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="nf-wrap">
+    <video class="nf-video" autoplay muted loop playsinline poster="assets/hero-opt.jpg" aria-hidden="true">
+      <source src="assets/Coop_Edit_2bit.mp4" type="video/mp4" />
+    </video>
+    <div class="nf-veil"></div>
+
+    <header class="nf-top">
+      <a href="index.html" class="nf-logo">COOPFIT</a>
+      <a href="index.html" class="nf-home" style="font-family:var(--ff-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);transition:color .3s">← Back home</a>
+    </header>
+
+    <main class="nf-main">
+      <span class="nf-sub">Error 404 · Rep not found</span>
+      <h1 class="nf-code">4<span class="rep">0</span>4</h1>
+      <p class="nf-lead">This page skipped leg day and disappeared. <span class="mute">The set you're looking for isn't here, but your next session is one click away.</span></p>
+      <div class="nf-cta">
+        <a href="index.html" class="btn"><span>Back to Home</span><span class="arrow">→</span></a>
+        <a href="https://calendly.com/coopfit78/new-meeting" target="_blank" rel="noopener" class="btn btn-ghost"><span>Book a Consultation</span><span class="arrow">↗</span></a>
+      </div>
+    </main>
+
+    <footer class="nf-meta">
+      <div>Coopfit Fitness · Tribeca, NYC</div>
+      <div>Private Training · NYC · Worldwide</div>
+    </footer>
+  </div>
+</body>
+</html>

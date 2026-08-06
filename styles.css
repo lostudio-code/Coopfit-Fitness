@@ -30,7 +30,7 @@
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
-html, body { margin: 0; padding: 0; background: var(--bg-0); color: var(--ink); }
+html, body { margin: 0; padding: 0; background: var(--bg-1); color: var(--ink); }
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--ff-body);
@@ -103,18 +103,9 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  transition: transform 0.5s var(--ease-out);
+  transition: background 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
 }
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--accent-hi);
-  transform: translateY(101%);
-  transition: transform 0.5s var(--ease-out);
-  z-index: 0;
-}
-.btn:hover::before { transform: translateY(0); }
+.btn:hover { background: var(--accent-hi); }
 .btn > * { position: relative; z-index: 1; }
 .btn .arrow {
   display: inline-block;
@@ -127,8 +118,7 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--ink);
   border: 1px solid var(--line-strong);
 }
-.btn-ghost::before { background: var(--ink); }
-.btn-ghost:hover { color: var(--bg-0); }
+.btn-ghost:hover { background: var(--ink); border-color: var(--ink); color: var(--bg-0); }
 
 /* --- Layout --- */
 .container {
