@@ -30,7 +30,7 @@
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
-html, body { margin: 0; padding: 0; background: var(--bg-1); color: var(--ink); }
+html, body { margin: 0; padding: 0; background: var(--bg-1); color: var(--ink); width: 100%; max-width: 100%; overflow-x: hidden; overscroll-behavior-x: none; }
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--ff-body);
@@ -38,7 +38,7 @@ body {
   line-height: 1.5;
   letter-spacing: -0.005em;
   font-size: 16px;
-  overflow-x: hidden;
+  position: relative;
 }
 
 img { max-width: 100%; display: block; }

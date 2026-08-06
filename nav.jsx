@@ -102,8 +102,10 @@ function Nav({ accent }) {
         </button>
       </div>
 
-      {/* Full-screen mobile drawer */}
-      <div className={`nav-drawer ${open ? "is-open" : ""}`}>
+      {/* Full-screen mobile drawer — portaled to body so the nav's
+          backdrop-filter doesn't become its containing block */}
+      {ReactDOM.createPortal(
+        <div className={`nav-drawer ${open ? "is-open" : ""}`}>
         <div className="nav-drawer-inner">
           <div className="nav-drawer-links">
             {links.map(([label, href], i) => (
@@ -140,7 +142,9 @@ function Nav({ accent }) {
             <div className="nav-drawer-meta">Tribeca, NYC · Est. 2002</div>
           </div>
         </div>
-      </div>
+        </div>,
+        document.body
+      )}
 
       <style>{`
         .nav-link:hover { color: var(--accent); }
