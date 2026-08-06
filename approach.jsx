@@ -6,7 +6,6 @@ function Marquee() {
   "Est. 2002",
   "Private Coaching",
   "22+ Years Experience",
-  "Featured: J.K. Simmons",
   "200+ Clients",
   "5 Certifications",
   "Now Accepting · 2026"];
@@ -57,7 +56,7 @@ function Method() {
 
 
   return (
-    <section id="method" style={{ padding: "160px 0 140px", background: "var(--bg-0)" }}>
+    <section id="method" style={{ padding: "160px 0 140px", background: "var(--bg-1)" }}>
       <div className="container">
         <SectionHead
 
@@ -242,6 +241,30 @@ function Services() {
         @media (max-width: 1000px) {
           .services-grid { grid-template-columns: 1fr !important; }
         }
+        @property --beam-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+        .svc-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          padding: 1px;
+          background: conic-gradient(from var(--beam-angle), transparent 0%, var(--accent-hi) 12%, var(--accent) 20%, transparent 34%);
+          -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+          opacity: 0;
+          transition: opacity 0.4s var(--ease-out);
+          pointer-events: none;
+          z-index: 3;
+        }
+        .svc-card.is-hover::after {
+          opacity: 1;
+          animation: beamspin 2.6s linear infinite;
+        }
+        @keyframes beamspin { to { --beam-angle: 360deg; } }
+        @media (prefers-reduced-motion: reduce) {
+          .svc-card.is-hover::after { animation: none; }
+        }
       `}</style>
     </section>);
 
@@ -262,15 +285,15 @@ function ServiceCard({ tag, title, kicker, body, bullets, img, imgPos }) {
       ref={ref}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className={`reveal ${vis ? "in" : ""}`}
+      className={`reveal svc-card ${hover ? "is-hover" : ""} ${vis ? "in" : ""}`}
       style={{
-        background: "var(--bg-0)",
+        background: hover ? "var(--bg-2)" : "var(--bg-1)",
         border: "1px solid var(--line)",
         position: "relative",
         display: "flex",
         flexDirection: "column",
         cursor: "default",
-        transition: "border-color 0.5s, transform 0.6s var(--ease-out)",
+        transition: "background 0.5s var(--ease-out), border-color 0.5s, transform 0.6s var(--ease-out)",
         ...(hover ? { borderColor: "var(--accent-lo)" } : {})
       }}>
       
@@ -388,7 +411,7 @@ function Stats() {
       padding: "120px 0",
       borderTop: "1px solid var(--line)",
       borderBottom: "1px solid var(--line)",
-      background: "var(--bg-0)"
+      background: "var(--bg-1)"
     }}>
       <div className="container">
         <div className="stats-grid" style={{

@@ -106,7 +106,7 @@ function Hero({ layout, headlineKey }) {
         minHeight: "100vh",
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
-        background: "var(--bg-0)",
+        background: "var(--bg-1)",
         overflow: "hidden"
       }}>
         {/* Left: text */}
@@ -208,7 +208,7 @@ function Hero({ layout, headlineKey }) {
       position: "relative",
       minHeight: "100vh",
       overflow: "hidden",
-      background: "var(--bg-0)"
+      background: "var(--bg-1)"
     }}>
       {/* Background media */}
       <div style={{ position: "absolute", inset: 0, willChange: "transform" }}>
@@ -227,22 +227,6 @@ function Hero({ layout, headlineKey }) {
         inset: 0,
         background: "radial-gradient(ellipse at 50% 60%, transparent 0%, rgba(10,9,8,0.5) 90%)",
         pointerEvents: "none"
-      }} />
-
-      {/* Side rails — luxe detail */}
-      <div className="hero-rail" style={{
-        position: "absolute",
-        top: 100, bottom: 100,
-        left: 48,
-        width: 1,
-        background: "linear-gradient(180deg, transparent, var(--line-strong) 30%, var(--line-strong) 70%, transparent)"
-      }} />
-      <div className="hero-rail" style={{
-        position: "absolute",
-        top: 100, bottom: 100,
-        right: 48,
-        width: 1,
-        background: "linear-gradient(180deg, transparent, var(--line-strong) 30%, var(--line-strong) 70%, transparent)"
       }} />
 
       {/* Content */}
@@ -264,7 +248,7 @@ function Hero({ layout, headlineKey }) {
         <HeroHeadline h={h} sizeBase={140} />
 
         <p className="hero-anim d3" style={{
-          maxWidth: 520,
+          maxWidth: 620,
           fontSize: 18,
           lineHeight: 1.55,
           color: "var(--ink-mute)"

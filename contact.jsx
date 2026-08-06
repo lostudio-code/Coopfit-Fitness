@@ -28,22 +28,31 @@ function Contact() {
       position: "relative",
       overflow: "hidden"
     }}>
-      {/* Background giant word for drama */}
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "brightness(0.4) contrast(1.05) saturate(0.85)",
+          pointerEvents: "none"
+        }}>
+        <source src="assets/consultation-bg.mp4" type="video/mp4" />
+      </video>
+      {/* Veil over video for legibility */}
       <div aria-hidden style={{
         position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        fontFamily: "var(--ff-display)",
-        fontWeight: 800,
-        fontSize: "clamp(180px, 24vw, 380px)",
-        letterSpacing: "-0.05em",
-        color: "var(--ink)",
-        opacity: 0.025,
-        whiteSpace: "nowrap",
-        pointerEvents: "none",
-        textTransform: "uppercase"
-      }}>BEGIN</div>
+        inset: 0,
+        background: "linear-gradient(180deg, rgba(17,16,14,0.82) 0%, rgba(17,16,14,0.62) 45%, rgba(17,16,14,0.86) 100%)",
+        pointerEvents: "none"
+      }} />
 
       <div className="container" style={{ position: "relative" }}>
         <div className="contact-grid" style={{
@@ -62,7 +71,6 @@ function Contact() {
             gap: 32,
             width: "100%"
           }}>
-            <span className="eyebrow" style={{ display: "none" }}>Begin</span>
             <h2 className="display" style={{
               margin: 0,
 
@@ -88,25 +96,25 @@ function Contact() {
                 alignItems: "center",
                 gap: 20,
                 padding: "24px 28px",
-                background: "var(--bg-0)",
-                border: "1px solid var(--line-strong)",
+                background: "var(--accent)",
+                border: "1px solid var(--accent)",
                 marginTop: 8,
                 width: "100%",
                 maxWidth: 460,
                 textAlign: "left",
                 position: "relative",
                 overflow: "hidden",
-                transition: "border-color 0.4s"
+                transition: "background 0.4s, border-color 0.4s"
               }}>
               
               <div style={{
                 width: 48,
                 height: 48,
                 flex: "none",
-                border: "1px solid var(--accent)",
+                border: "1px solid var(--accent-ink)",
                 display: "grid",
                 placeItems: "center",
-                color: "var(--accent)"
+                color: "var(--accent-ink)"
               }}>
                 <CalendarIcon />
               </div>
@@ -115,12 +123,13 @@ function Contact() {
                   fontSize: 18,
                   textTransform: "none",
                   fontWeight: 600,
-                  letterSpacing: "-0.005em"
+                  letterSpacing: "-0.005em",
+                  color: "var(--accent-ink)"
                 }}>Book directly via Calendly</div>
               </div>
               <span className="arrow-lg" style={{
                 fontSize: 22,
-                color: "var(--accent)",
+                color: "var(--accent-ink)",
                 transition: "transform 0.4s var(--ease-out)"
               }}>→</span>
             </a>
@@ -171,8 +180,33 @@ function Contact() {
       </div>
 
       <style>{`
-        .calendly-card:hover { border-color: var(--accent) !important; }
+        .calendly-card { position: relative; }
+        .calendly-card:hover { background: var(--accent-hi) !important; border-color: var(--accent-hi) !important; }
         .calendly-card:hover .arrow-lg { transform: translateX(6px); }
+        @property --beam-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+        .calendly-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          padding: 1px;
+          background: conic-gradient(from var(--beam-angle), transparent 0%, var(--accent-ink) 12%, var(--accent-ink) 20%, transparent 34%);
+          -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+          opacity: 0;
+          transition: opacity 0.4s var(--ease-out);
+          pointer-events: none;
+          z-index: 3;
+        }
+        .calendly-card:hover::after {
+          opacity: 1;
+          animation: beamspin 2.6s linear infinite;
+        }
+        @keyframes beamspin { to { --beam-angle: 360deg; } }
+        @media (prefers-reduced-motion: reduce) {
+          .calendly-card:hover::after { animation: none; }
+        }
       `}</style>
     </section>);
 
@@ -214,7 +248,7 @@ function CalendarIcon() {
 function Footer() {
   return (
     <footer style={{
-      background: "var(--bg-0)",
+      background: "var(--bg-1)",
       borderTop: "1px solid var(--line)",
       padding: "80px 0 36px"
     }}>

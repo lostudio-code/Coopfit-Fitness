@@ -36,7 +36,7 @@ function About() {
   return (
     <section id="about" ref={ref} style={{
       padding: "160px 0 0",
-      background: "var(--bg-0)",
+      background: "var(--bg-1)",
       position: "relative",
       overflow: "hidden"
     }}>
