@@ -124,7 +124,7 @@ function About() {
               fontSize: "clamp(40px, 5vw, 76px)",
               lineHeight: 0.92
             }}>
-              Twenty-two years.<br />
+              Twenty-five years.<br />
               <em style={{ fontStyle: "italic", fontFamily: "\"Archivo Narrow\"", fontWeight: "700" }}>One craft.</em>
             </h2>
             <p style={{ margin: 0, fontSize: 17, lineHeight: 1.6, color: "var(--ink-mute)" }}>
